@@ -103,6 +103,11 @@ class MainActivity : AppCompatActivity(), CryptoAdapter.Listener {
             binding.cryptoRecyclerView.adapter = cryptoAdapter
         }
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        compositeDisposable.clear()
+    }
 }
 
 
